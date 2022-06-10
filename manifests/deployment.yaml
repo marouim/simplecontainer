@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplecontainer
+
+spec:
+  selector:
+    matchLabels:
+      app: simplecontainer
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: simplecontainer
+    spec:
+      containers:
+        - name: simplecontainer
+          image: >-
+            quay.io/mouimet/simplecontainer:v1
+          ports:
+            - containerPort: 8080
