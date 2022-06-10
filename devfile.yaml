@@ -4,9 +4,9 @@ metadata:
 projects:
   - name: simplecontainer
     source:
-      location: 'https://github.com/marouim/ansible-custom-ee.git'
+      location: 'https://github.com/marouim/simplecontainer.git'
       type: github
-      branch: master
+      branch: main
 components:
   - mountSources: true
     command:
@@ -22,40 +22,26 @@ components:
     alias: oc
     image: 'quay.io/openshift/origin-cli:4.8'
   - mountSources: true
-    command:
-      - tail
-    args:
-      - '-f'
-      - /dev/null
-    memoryLimit: 512Mi
-    type: dockerimage
-    alias: ansible-ee
-    image: 'quay.io/mouimet/ansible-custom-ee:v4'
-  - mountSources: true
     referenceContent: |
       kind: Pod
       apiVersion: v1
       metadata:
-        name: ansiblebuilder
+        name: podman
       spec:
         containers:
-          - name: ansiblebuilder
+          - name: podman
             command:
               - tail
             securityContext:
               privileged: true
-            image: quay.io/mouimet/ansible-builder-image
+            image: quay.io/containers/podman
             args:
               - '-f'
               - /dev/null
     type: kubernetes
-    alias: ansiblebuilder
+    alias: podman
   - id: redhat/vscode-yaml/latest
     type: chePlugin
-commands:
-  - name: Build Execution Environment
-    actions:
-      - workdir: '${CHE_PROJECTS_ROOT}/ansible-custom-ee'
-        type: exec
-        command: 'ansible-builder build --tag quay.io/mouimet/ansible-custom-ee:dev'
-        component: ansiblebuilder
+  - id: ms-python/python/latest
+    type: chePlugin
+
