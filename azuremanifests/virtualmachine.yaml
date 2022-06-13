@@ -1,0 +1,14 @@
+kind: AzureVirtualMachine
+apiVersion: azure.microsoft.com/v1alpha1
+metadata:
+  name: hpfvm1
+  namespace: openhack-1
+spec:
+  adminUserName: azureuser
+  location: CanadaCentral
+  networkInterfaceName: nic-sample-01
+  osType: Linux
+  platformImageURN: 'RedHat:RHEL:8-LVM:latest'
+  resourceGroup: resourcegroup-azure-operators
+  sshPublicKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCeKAwUutK0DWWkH50ihqi+GhDuyJsate2c3QAIGbEui75sfxgXdW4+wWXeuchaWZLBrmgHI9KWrsfcCdw+pmueIha98+rWsQknm3ra01ZEq7Ob+R2mRjlSMhvCBxVYOotdxc5gxWiOFuxdye5Wp3YTN76ZvvSz7ju9Z0DMolRScN3mW0fh1ABJTuM30zJyDCUFjrRrrJFNGHowH1y4gWkyyK3h/X8jJHZARnuenJxTIcAr18L/A3+N2trWDdeTp52JQLNhs42kZHcn3PTECrXPNN6oRONkPVNZJxiISnvPtymRlrMGFaVVNF6pqTWshCpKngwsA2gkwCnSiBoQG9B34r1vG/HDi8pmihnQsHSUvmzHeIGrV2kBJJwMTABj1Wpg7iCLgp/4CY0UQ/kJOf3QLaKqFlxVSeh8SYAQSAY9ifQzWuAbVNQuCiPKLvfOZeXfTBMrSDAvT4Kpk0x1RZnytzxBCer4qgeYN3gRAnkkC49AbZQa90q9vB/F1wQpylM= mouimet@Martins-MacBook-Pro.local
+  vmSize: Standard_DS1_v2

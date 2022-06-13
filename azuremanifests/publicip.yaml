@@ -1,0 +1,12 @@
+kind: AzurePublicIPAddress
+apiVersion: azure.microsoft.com/v1alpha1
+metadata:
+  name: nic-pip-sample-01
+  namespace: openhack-1
+spec:
+  idleTimeoutInMinutes: 10
+  location: CanadaCentral
+  publicIPAddressVersion: IPv4
+  publicIPAllocationMethod: Static
+  resourceGroup: resourcegroup-azure-operators
+  skuName: Basic

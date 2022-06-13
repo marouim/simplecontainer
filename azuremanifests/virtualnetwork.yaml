@@ -1,0 +1,14 @@
+apiVersion: azure.microsoft.com/v1alpha1
+kind: VirtualNetwork
+metadata:
+  name: vnet-sample-01
+  namespace: openhack-1
+spec:
+  subnets:
+    - subnetAddressPrefix: 10.1.0.0/16
+      subnetName: test1
+    - subnetAddressPrefix: 10.2.0.0/16
+      subnetName: test2
+  addressSpace: 10.0.0.0/8
+  location: CanadaCentral
+  resourceGroup: resourcegroup-azure-operators

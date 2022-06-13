@@ -1,0 +1,11 @@
+kind: AzureNetworkInterface
+apiVersion: azure.microsoft.com/v1alpha1
+metadata:
+  name: nic-sample-01
+  namespace: openhack-1
+spec:
+  location: CanadaCentral
+  publicIPAddressName: nic-pip-sample-01
+  resourceGroup: resourcegroup-azure-operators
+  subnetName: test1
+  vnetName: vnet-sample-01
