@@ -38,4 +38,30 @@ oc scale --replicas=5 deployment/simplecontainer
 
 # Section: Operators
 
+From Dev Console
+Click +Add
+Operator Backed
+Search for Kafka
+Create Kafka
+Let all the defaults
+Create
+
+# Section: Develop with Openshift
+
+From Dev Console
+Click +Add
+Import from Git
+https://github.com/marouim/gestiontransaction.git
+Openshift will validate .NET 5
+
+Advanced Options
+
+click: Show advanced Routing options
+click Secure Route
+TLS termination: Edge
+
+click Create
+
+# Section: Hybrid Cloud
+
 
