@@ -3,7 +3,6 @@ kind: Route
 metadata:
   name: simplecontainer
 spec:
-  host: simplecontainer.apps.hiybv6c8.eastus.aroapp.io
   to:
     kind: Service
     name: simplecontainer
